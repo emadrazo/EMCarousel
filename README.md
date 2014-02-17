@@ -1,4 +1,59 @@
-EMCarousel
-==========
+!http://www.pimedios.com/wordpress/evamadrazo/wp-content/uploads/sites/3/2014/02/LOGO_EVA_favIcon.png!
+
+h1. EMCarousel
+
 
 EMCarousel is an simple and easy-to-use 3D carousel for iOS app. 
+
+
+h2. Features
+
+* animated item selection
+* carousel inclination angle support
+* ARC(Automatic Reference Counting) support
+* interface builder support
+
+h2. Installation
+
+* Drag the @EMCarousel/EMCarousel@ folder into your project. 
+* Add the *QuartzCore* framework to your project. 
+
+h2. Usage
+
+(see sample Xcode project)
+
+Create Carousel view :
+
+<pre>
+    carouselView = [[CarouselView alloc] initWithFrame:self.view.frame];
+    [carouselView setCarouselInclination:-0.15];    //optional
+    [carouselView setBackItemAlpha:0.8];            //optional
+    [carouselView shouldCenterSelectedItem:YES];    //optional
+</pre>
+
+Add items to carousel:
+
+<pre>
+    [carouselView addItem:[UIImage imageNamed:@"sample.png"] withTitle:@"ONE"];
+    [carouselView addItem:[UIImage imageNamed:@"sample.png"] withTitle:@"TWO"];
+    [carouselView addItem:[UIImage imageNamed:@"sample.png"] withTitle:@"THREE"];
+    ...
+
+</pre>
+
+Set delegate and add the view:
+<pre>
+    [carouselView setSelectionDelegate:self];
+    [self.view addSubview:carouselView];
+</pre>
+
+
+Implement  Delegate Methods:
+
+<pre>
+-(void)carousel:(CarouselView *)carousel itemSelected:(CarouselItem *)item;
+</pre>
+
+h2. Credits
+
+EMCarousel is brought to you by "Eva Madrazo":http://
