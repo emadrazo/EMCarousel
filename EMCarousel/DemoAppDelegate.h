@@ -1,5 +1,5 @@
 //
-//  EMViewController.h
+//  EMAppDelegate.h
 //  EMCarousel
 //
 //  Created by Eva Madrazo on 2/10/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EMViewController : UIViewController
+@interface DemoAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

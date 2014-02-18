@@ -12,19 +12,27 @@
 		A62CC66A18B234F50026D2C9 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CC66518B234F50026D2C9 /* CarouselView.m */; };
 		A62CC66B18B234F50026D2C9 /* NSArray+Circular.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CC66718B234F50026D2C9 /* NSArray+Circular.m */; };
 		A62CC66D18B235620026D2C9 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CC66C18B235620026D2C9 /* sample.png */; };
+		A62CC67018B23EDA0026D2C9 /* DemoCarouselItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CC66F18B23EDA0026D2C9 /* DemoCarouselItem.m */; };
+		A62CC67218B23EF90026D2C9 /* DemoCarouselItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62CC67118B23EF90026D2C9 /* DemoCarouselItem.xib */; };
 		A655C19918A8DCAC009B1581 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655C19818A8DCAC009B1581 /* Foundation.framework */; };
 		A655C19B18A8DCAC009B1581 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655C19A18A8DCAC009B1581 /* CoreGraphics.framework */; };
 		A655C19D18A8DCAC009B1581 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655C19C18A8DCAC009B1581 /* UIKit.framework */; };
 		A655C1A318A8DCAC009B1581 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A655C1A118A8DCAC009B1581 /* InfoPlist.strings */; };
 		A655C1A518A8DCAC009B1581 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A655C1A418A8DCAC009B1581 /* main.m */; };
-		A655C1A918A8DCAC009B1581 /* EMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A655C1A818A8DCAC009B1581 /* EMAppDelegate.m */; };
+		A655C1A918A8DCAC009B1581 /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A655C1A818A8DCAC009B1581 /* DemoAppDelegate.m */; };
 		A655C1AC18A8DCAC009B1581 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A655C1AA18A8DCAC009B1581 /* Main_iPhone.storyboard */; };
 		A655C1AF18A8DCAC009B1581 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A655C1AD18A8DCAC009B1581 /* Main_iPad.storyboard */; };
-		A655C1B218A8DCAC009B1581 /* EMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A655C1B118A8DCAC009B1581 /* EMViewController.m */; };
+		A655C1B218A8DCAC009B1581 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A655C1B118A8DCAC009B1581 /* DemoViewController.m */; };
 		A655C1B418A8DCAC009B1581 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A655C1B318A8DCAC009B1581 /* Images.xcassets */; };
 		A655C1BB18A8DCAD009B1581 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655C1BA18A8DCAD009B1581 /* XCTest.framework */; };
 		A655C1BC18A8DCAD009B1581 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655C19818A8DCAC009B1581 /* Foundation.framework */; };
 		A655C1BD18A8DCAD009B1581 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A655C19C18A8DCAC009B1581 /* UIKit.framework */; };
+		A66F344018B34C1E00E064F7 /* castle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A66F343A18B34C1E00E064F7 /* castle.jpg */; };
+		A66F344118B34C1E00E064F7 /* castle@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A66F343B18B34C1E00E064F7 /* castle@2x.jpg */; };
+		A66F344218B34C1E00E064F7 /* fageda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A66F343C18B34C1E00E064F7 /* fageda.jpg */; };
+		A66F344318B34C1E00E064F7 /* fageda@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A66F343D18B34C1E00E064F7 /* fageda@2x.jpg */; };
+		A66F344418B34C1E00E064F7 /* lily.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A66F343E18B34C1E00E064F7 /* lily.jpg */; };
+		A66F344518B34C1E00E064F7 /* lily@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A66F343F18B34C1E00E064F7 /* lily@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,9 @@
 		A62CC66618B234F50026D2C9 /* NSArray+Circular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Circular.h"; sourceTree = "<group>"; };
 		A62CC66718B234F50026D2C9 /* NSArray+Circular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Circular.m"; sourceTree = "<group>"; };
 		A62CC66C18B235620026D2C9 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		A62CC66E18B23EDA0026D2C9 /* DemoCarouselItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCarouselItem.h; sourceTree = "<group>"; };
+		A62CC66F18B23EDA0026D2C9 /* DemoCarouselItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCarouselItem.m; sourceTree = "<group>"; };
+		A62CC67118B23EF90026D2C9 /* DemoCarouselItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCarouselItem.xib; sourceTree = "<group>"; };
 		A655C19518A8DCAC009B1581 /* EMCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A655C19818A8DCAC009B1581 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A655C19A18A8DCAC009B1581 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,15 +66,21 @@
 		A655C1A218A8DCAC009B1581 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A655C1A418A8DCAC009B1581 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A655C1A618A8DCAC009B1581 /* EMCarousel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EMCarousel-Prefix.pch"; sourceTree = "<group>"; };
-		A655C1A718A8DCAC009B1581 /* EMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMAppDelegate.h; sourceTree = "<group>"; };
-		A655C1A818A8DCAC009B1581 /* EMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMAppDelegate.m; sourceTree = "<group>"; };
+		A655C1A718A8DCAC009B1581 /* DemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAppDelegate.h; sourceTree = "<group>"; };
+		A655C1A818A8DCAC009B1581 /* DemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppDelegate.m; sourceTree = "<group>"; };
 		A655C1AB18A8DCAC009B1581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		A655C1AE18A8DCAC009B1581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		A655C1B018A8DCAC009B1581 /* EMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMViewController.h; sourceTree = "<group>"; };
-		A655C1B118A8DCAC009B1581 /* EMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMViewController.m; sourceTree = "<group>"; };
+		A655C1B018A8DCAC009B1581 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		A655C1B118A8DCAC009B1581 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		A655C1B318A8DCAC009B1581 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A655C1B918A8DCAD009B1581 /* EMCarouselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMCarouselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A655C1BA18A8DCAD009B1581 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A66F343A18B34C1E00E064F7 /* castle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = castle.jpg; sourceTree = "<group>"; };
+		A66F343B18B34C1E00E064F7 /* castle@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "castle@2x.jpg"; sourceTree = "<group>"; };
+		A66F343C18B34C1E00E064F7 /* fageda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fageda.jpg; sourceTree = "<group>"; };
+		A66F343D18B34C1E00E064F7 /* fageda@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fageda@2x.jpg"; sourceTree = "<group>"; };
+		A66F343E18B34C1E00E064F7 /* lily.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lily.jpg; sourceTree = "<group>"; };
+		A66F343F18B34C1E00E064F7 /* lily@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lily@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,13 +154,17 @@
 		A655C19E18A8DCAC009B1581 /* EMCarousel */ = {
 			isa = PBXGroup;
 			children = (
+				A66F343918B34C1E00E064F7 /* images */,
 				A62CC65F18B234F50026D2C9 /* EMCarousel */,
-				A655C1A718A8DCAC009B1581 /* EMAppDelegate.h */,
-				A655C1A818A8DCAC009B1581 /* EMAppDelegate.m */,
+				A655C1A718A8DCAC009B1581 /* DemoAppDelegate.h */,
+				A655C1A818A8DCAC009B1581 /* DemoAppDelegate.m */,
 				A655C1AA18A8DCAC009B1581 /* Main_iPhone.storyboard */,
 				A655C1AD18A8DCAC009B1581 /* Main_iPad.storyboard */,
-				A655C1B018A8DCAC009B1581 /* EMViewController.h */,
-				A655C1B118A8DCAC009B1581 /* EMViewController.m */,
+				A655C1B018A8DCAC009B1581 /* DemoViewController.h */,
+				A655C1B118A8DCAC009B1581 /* DemoViewController.m */,
+				A62CC66E18B23EDA0026D2C9 /* DemoCarouselItem.h */,
+				A62CC66F18B23EDA0026D2C9 /* DemoCarouselItem.m */,
+				A62CC67118B23EF90026D2C9 /* DemoCarouselItem.xib */,
 				A655C1B318A8DCAC009B1581 /* Images.xcassets */,
 				A655C19F18A8DCAC009B1581 /* Supporting Files */,
 			);
@@ -160,6 +181,19 @@
 				A655C1A618A8DCAC009B1581 /* EMCarousel-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A66F343918B34C1E00E064F7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A66F343A18B34C1E00E064F7 /* castle.jpg */,
+				A66F343B18B34C1E00E064F7 /* castle@2x.jpg */,
+				A66F343C18B34C1E00E064F7 /* fageda.jpg */,
+				A66F343D18B34C1E00E064F7 /* fageda@2x.jpg */,
+				A66F343E18B34C1E00E064F7 /* lily.jpg */,
+				A66F343F18B34C1E00E064F7 /* lily@2x.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,10 +273,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A66F344518B34C1E00E064F7 /* lily@2x.jpg in Resources */,
 				A655C1AF18A8DCAC009B1581 /* Main_iPad.storyboard in Resources */,
+				A66F344418B34C1E00E064F7 /* lily.jpg in Resources */,
 				A62CC66918B234F50026D2C9 /* CarouselItem.xib in Resources */,
 				A655C1B418A8DCAC009B1581 /* Images.xcassets in Resources */,
+				A66F344218B34C1E00E064F7 /* fageda.jpg in Resources */,
+				A66F344118B34C1E00E064F7 /* castle@2x.jpg in Resources */,
 				A655C1AC18A8DCAC009B1581 /* Main_iPhone.storyboard in Resources */,
+				A62CC67218B23EF90026D2C9 /* DemoCarouselItem.xib in Resources */,
+				A66F344018B34C1E00E064F7 /* castle.jpg in Resources */,
+				A66F344318B34C1E00E064F7 /* fageda@2x.jpg in Resources */,
 				A62CC66D18B235620026D2C9 /* sample.png in Resources */,
 				A655C1A318A8DCAC009B1581 /* InfoPlist.strings in Resources */,
 			);
@@ -262,8 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A655C1B218A8DCAC009B1581 /* EMViewController.m in Sources */,
-				A655C1A918A8DCAC009B1581 /* EMAppDelegate.m in Sources */,
+				A655C1B218A8DCAC009B1581 /* DemoViewController.m in Sources */,
+				A62CC67018B23EDA0026D2C9 /* DemoCarouselItem.m in Sources */,
+				A655C1A918A8DCAC009B1581 /* DemoAppDelegate.m in Sources */,
 				A62CC66818B234F50026D2C9 /* CarouselItem.m in Sources */,
 				A62CC66B18B234F50026D2C9 /* NSArray+Circular.m in Sources */,
 				A62CC66A18B234F50026D2C9 /* CarouselView.m in Sources */,

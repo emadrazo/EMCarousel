@@ -9,6 +9,7 @@ EMCarousel is an simple and easy-to-use 3D carousel for iOS app.
 h2. Features
 
 * animated item selection
+* add items with animation
 * carousel inclination angle support
 * ARC(Automatic Reference Counting) support
 * interface builder support

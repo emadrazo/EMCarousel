@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Eva Madrazo. All rights reserved.
 //
 
-#import "EMAppDelegate.h"
+#import "DemoAppDelegate.h"
 
-@implementation EMAppDelegate
+@implementation DemoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

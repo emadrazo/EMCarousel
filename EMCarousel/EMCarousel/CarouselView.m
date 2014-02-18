@@ -45,7 +45,7 @@
 - (void) moveCarousel:(CGFloat) angleOffset;
 - (CarouselItem *) findItemOnscreen:(CALayer *)targetLayer;
 - (CarouselItem *) getSelectedItem;
-- (void) refreshItemsPosition;
+- (void) refreshItemsPositionWithAnimated:(BOOL) animated;
 - (void) logCarouselItems;
 @end
 
@@ -100,29 +100,33 @@ NSDate *startingTime;
 		DBLog(@"%@ nil Image", [self class]);
 	}
     
-	//create carousel item
-    CarouselItem *item = [[NSBundle mainBundle] loadNibNamed:@"CarouselItem" owner:self options:nil][0];
-    item.imageView.image = image;
-    item.imageView.clipsToBounds = YES;
-    [item.imageView.layer setEdgeAntialiasingMask:(kCALayerLeftEdge|kCALayerRightEdge|kCALayerBottomEdge|kCALayerTopEdge)];
-    
-    [item.titleLabel setFont:[UIFont fontWithName:@"helvetica" size:30.0]];
-    [item.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [item.titleLabel setText:aTitle];
-	
-	if(selectedIndex == -1){
-        //first item added
-		selectedIndex = 0;
-	}
-	
-	[self.layer insertSublayer:item.layer atIndex:[carouselItems count]];
-    // place the carousel just in the middle of the view
-	[item.layer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) ];
-	
-	
-	[carouselItems addObject:item];
-    
-    [self refreshItemsPosition];
+    //New item added in main queue
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //create carousel item
+        CarouselItem *item = [[NSBundle mainBundle] loadNibNamed:@"CarouselItem" owner:self options:nil][0];
+        item.imageView.image = image;
+        item.imageView.clipsToBounds = YES;
+        [item.imageView.layer setEdgeAntialiasingMask:(kCALayerLeftEdge|kCALayerRightEdge|kCALayerBottomEdge|kCALayerTopEdge)];
+        
+        [item.titleLabel setFont:[UIFont fontWithName:@"helvetica" size:30.0]];
+        [item.titleLabel setAdjustsFontSizeToFitWidth:YES];
+        [item.titleLabel setText:aTitle];
+        
+        if(selectedIndex == -1){
+            //first item added
+            selectedIndex = 0;
+        }
+        
+        [self.layer insertSublayer:item.layer atIndex:[carouselItems count]];
+        // place the carousel just in the middle of the view
+        [item.layer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) ];
+        
+        
+        [carouselItems addObject:item];
+        
+        [self refreshItemsPositionWithAnimated:YES];
+        
+    });
 }
 
 
@@ -137,17 +141,20 @@ NSDate *startingTime;
 		selectedIndex = 0;
 	}
 	
-	[self.layer insertSublayer:item.layer atIndex:[carouselItems count]];
-    // place the carousel just in the middle of the view
-	[item.layer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) ];
-
-	[carouselItems addObject:item];
-    
-    [self refreshItemsPosition];
+    //New item added in main queue
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.layer insertSublayer:item.layer atIndex:[carouselItems count]];
+        // place the carousel just in the middle of the view
+        [item.layer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) ];
+        
+        [carouselItems addObject:item];
+        
+        [self refreshItemsPositionWithAnimated:YES];
+    });
 }
 
 ///when an item is added  radius and separationAngle must change  and all the items have to be redrawn
-- (void) refreshItemsPosition {
+- (void) refreshItemsPositionWithAnimated:(BOOL) animated {
     if (!carouselItems || [carouselItems count] == 0) {
         return;
     }
@@ -160,6 +167,12 @@ NSDate *startingTime;
     DBLog(@"width: %f radius %f angle %f    --- %f", itemView.frame.size.width, radius,separationAngle, separationAngle * numberOfImages);
                                                         
 
+    if (animated) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+    }
+    
     CGFloat angle = 0.0;
     for (CarouselItem *item in carouselItems) {
         [item setAngle:angle];
@@ -176,6 +189,10 @@ NSDate *startingTime;
         
         
         angle += separationAngle;
+    }
+    
+    if (animated) {
+        [UIView commitAnimations];
     }
 }
 
