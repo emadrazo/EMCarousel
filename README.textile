@@ -14,7 +14,7 @@ h2. Features
 * ARC(Automatic Reference Counting) support
 * interface builder support
 
-!https://github.com/emadrazo/EMCarousel/blob/master/EMCarousel/images/screenSeven.png!
+!https://github.com/emadrazo/EMCarousel/blob/master/EMCarousel/images/screenSeven.png?raw=true!
 
 h2. Installation
 
