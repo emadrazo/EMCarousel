@@ -14,6 +14,8 @@ h2. Features
 * ARC(Automatic Reference Counting) support
 * interface builder support
 
+!https://github.com/emadrazo/EMCarousel/blob/master/EMCarousel/images/screenSeven.png!
+
 h2. Installation
 
 * Drag the @EMCarousel/EMCarousel@ folder into your project. 
