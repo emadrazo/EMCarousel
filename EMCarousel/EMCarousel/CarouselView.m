@@ -94,28 +94,30 @@ NSDate *startingTime;
 
 
 #pragma mark - add item methods
-- (void) addItem:(UIImage *)image withTitle:(NSString *)aTitle{
+- (CarouselItem *) addItem:(UIImage *)image withTitle:(NSString *)aTitle{
 	DBLog(@"%@ addItem", [self class]);
 	if (!image){
 		DBLog(@"%@ nil Image", [self class]);
 	}
     
+    //create carousel item
+    CarouselItem *item = [[NSBundle mainBundle] loadNibNamed:@"CarouselItem" owner:self options:nil][0];
+    item.imageView.image = image;
+    item.imageView.clipsToBounds = YES;
+    [item.imageView.layer setEdgeAntialiasingMask:(kCALayerLeftEdge|kCALayerRightEdge|kCALayerBottomEdge|kCALayerTopEdge)];
+    
+    [item.titleLabel setFont:[UIFont fontWithName:@"helvetica" size:30.0]];
+    [item.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [item.titleLabel setText:aTitle];
+    
+    if(selectedIndex == -1){
+        //first item added
+        selectedIndex = 0;
+    }
+
+    
     //New item added in main queue
     dispatch_async(dispatch_get_main_queue(), ^{
-        //create carousel item
-        CarouselItem *item = [[NSBundle mainBundle] loadNibNamed:@"CarouselItem" owner:self options:nil][0];
-        item.imageView.image = image;
-        item.imageView.clipsToBounds = YES;
-        [item.imageView.layer setEdgeAntialiasingMask:(kCALayerLeftEdge|kCALayerRightEdge|kCALayerBottomEdge|kCALayerTopEdge)];
-        
-        [item.titleLabel setFont:[UIFont fontWithName:@"helvetica" size:30.0]];
-        [item.titleLabel setAdjustsFontSizeToFitWidth:YES];
-        [item.titleLabel setText:aTitle];
-        
-        if(selectedIndex == -1){
-            //first item added
-            selectedIndex = 0;
-        }
         
         [self.layer insertSublayer:item.layer atIndex:[carouselItems count]];
         // place the carousel just in the middle of the view
@@ -127,13 +129,17 @@ NSDate *startingTime;
         [self refreshItemsPositionWithAnimated:YES];
         
     });
+    
+    return item;
+    
 }
 
 
 - (void) addItem:(CarouselItem *)item{
 	DBLog(@"%@ addItem", [self class]);
 	if (!item){
-		DBLog(@"%@ nil Image", [self class]);
+		DBLog(@"%@ nil item", [self class]);
+        return;
 	}
 
 	if(selectedIndex == -1){
@@ -152,6 +158,25 @@ NSDate *startingTime;
         [self refreshItemsPositionWithAnimated:YES];
     });
 }
+
+- (void) removeItem:(CarouselItem *)item{
+    DBLog(@"%@ removeItem", [self class]);
+	if (!item){
+		DBLog(@"%@ nil item", [self class]);
+        return;
+	}
+    
+		
+    //New item added in main queue
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.layer removeFromSuperlayer];
+        [carouselItems removeObject:item];
+        [self refreshItemsPositionWithAnimated:YES];
+    });
+
+
+}
+
 
 ///when an item is added  radius and separationAngle must change  and all the items have to be redrawn
 - (void) refreshItemsPositionWithAnimated:(BOOL) animated {

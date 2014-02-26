@@ -37,11 +37,11 @@
 - (void) setSelectedItemAndCenter:(CarouselItem *)item;
 
 /** Quickly add a new item in carousel
- 
  @param image the background image for item
  @param title the title for item
+ @return item added
  */
-- (void) addItem:(UIImage *)image withTitle:(NSString *)title;
+- (CarouselItem *) addItem:(UIImage *)image withTitle:(NSString *)title;
 
 /** Add a new item in carousel. CarouselItem can be extended in order to change the look&feel of the items
  
@@ -49,6 +49,13 @@
 
  */
 - (void) addItem:(CarouselItem *)item;
+
+/** Remove item from carousel.
+ 
+ @param item an object extending CarouselItem to remove from carousel
+ 
+ */
+- (void) removeItem:(CarouselItem *)item;
 
 
 /** Set carousel inclination. This allows the user see the back of the carousel.
