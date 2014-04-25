@@ -78,4 +78,14 @@
  @default default value is YES
  */
 - (void) shouldCenterSelectedItem: (BOOL)shouldCenter;
+
+/** returns item at position index
+ @param index
+ */
+- (CarouselItem *)getItemAtIndex:(NSInteger)index;
+
+/** returns current items
+ */
+- (NSArray *) getItems;
+
 @end

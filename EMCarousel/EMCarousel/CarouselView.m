@@ -167,14 +167,29 @@ NSDate *startingTime;
 	}
     
 		
-    //New item added in main queue
+    //Item removed in main queue
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.layer removeFromSuperlayer];
+        [item.layer removeFromSuperlayer];
         [carouselItems removeObject:item];
         [self refreshItemsPositionWithAnimated:YES];
     });
 
 
+}
+
+- (CarouselItem *)getItemAtIndex:(NSInteger)index{
+    DBLog(@"getItemAtIndex %i", index);
+    if (!carouselItems || [carouselItems count] == 0) {
+        return nil;
+    }
+    
+    return [carouselItems circularObjectAtIndex:index];
+}
+
+/** returns current items
+ */
+- (NSArray *) getItems{
+    return carouselItems;
 }
 
 

@@ -51,12 +51,30 @@
     
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn.frame = CGRectMake(10.0, self.view.frame.size.height- 60.0, self.view.frame.size.width - 20.0, 50.0);
+    btn.frame = CGRectMake(0.0, self.view.frame.size.height- 105.0, self.view.frame.size.width, 30.0);
     btn.backgroundColor = [UIColor blackColor];
-    [btn setTitle:@"Add item" forState:UIControlStateNormal];
+    [btn setTitle:@"Add Item" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(addNewRandomItem:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    UIButton *btnRemove = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnRemove.frame = CGRectMake(0.0, self.view.frame.size.height- 70.0, self.view.frame.size.width, 30.0);
+    btnRemove.backgroundColor = [UIColor blackColor];
+    [btnRemove setTitle:@"Remove Item" forState:UIControlStateNormal];
+    [btnRemove setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnRemove addTarget:self action:@selector(removeRandomItem:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnRemove];
+    
+    UIButton *btnChange = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnChange.frame = CGRectMake(0.0, self.view.frame.size.height- 35.0, self.view.frame.size.width, 30.0);
+    btnChange.backgroundColor = [UIColor blackColor];
+    [btnChange setTitle:@"Select Random Item" forState:UIControlStateNormal];
+    [btnChange setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnChange addTarget:self action:@selector(changeToRandomItem:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnChange];
+    
+    
     
 }
 
@@ -77,7 +95,21 @@
     if (carouselView) {
         [carouselView addItem:[UIImage imageNamed:@"lily.jpg"] withTitle:@"SIX"];
     }
+}
+
+- (IBAction)removeRandomItem:(id)sender{
+    if (carouselView) {
+        NSInteger randomIndex = (arc4random() %[[carouselView getItems] count]);
+        [carouselView  removeItem:[carouselView getItemAtIndex:randomIndex]];
+    }
     
+}
+
+- (IBAction)changeToRandomItem:(id)sender{
+    if (carouselView) {
+        NSInteger randomIndex = (arc4random() %[[carouselView getItems] count]);
+        [carouselView setSelectedItemAndCenter:[carouselView getItemAtIndex:randomIndex]];
+    }
 }
 
 @end
