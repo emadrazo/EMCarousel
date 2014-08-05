@@ -87,13 +87,16 @@
 #pragma mark - @protocol EMCarouselSelectionProtocol <NSObject>
 -(void)carousel:(CarouselView *)carousel itemSelected:(CarouselItem *)item{
     //item has been selected
+    
+    NSLog(@"item selected %@", item);
 }
 
 
 #pragma mark - test action
 - (IBAction)addNewRandomItem:(id)sender{
     if (carouselView) {
-        [carouselView addItem:[UIImage imageNamed:@"lily.jpg"] withTitle:@"SIX"];
+        NSInteger randomIndex = (arc4random() %[[carouselView getItems] count]);
+        [carouselView addItem:[UIImage imageNamed:@"lily.jpg"] withTitle:[NSString stringWithFormat:@"RANDOM - %d",randomIndex]];
     }
 }
 

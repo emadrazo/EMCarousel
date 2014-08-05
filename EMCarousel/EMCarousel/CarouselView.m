@@ -201,7 +201,8 @@ NSDate *startingTime;
     
     int numberOfImages = [carouselItems count];
     UIView *itemView = (UIView *)[carouselItems objectAtIndex:0];
-    radius = (itemView.frame.size.width/2 ) /  tan((M_PI/ numberOfImages));
+    radius = (itemView.bounds.size.width/2 ) /  tan((M_PI/ numberOfImages));
+ //WARNING  itemView.frame.size.width depends on the position of view, we must use the bounds property...
     
     separationAngle = (2*M_PI) / numberOfImages;
     DBLog(@"width: %f radius %f angle %f    --- %f", itemView.frame.size.width, radius,separationAngle, separationAngle * numberOfImages);
